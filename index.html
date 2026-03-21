@@ -1,0 +1,123 @@
+<html>
+<head>
+  <style>
+   button{
+        background-color:gray;
+        border-radius:15vw;
+        color:black;
+        font-size:20vw;
+        text-align:center;
+        padding:25vw 25vw;
+        margin-bottom:7.5vw;
+        font-family: Arial, sans-serif;
+        line-height:1;
+        }
+        button:hover{
+            background-color:black;
+            transform: scale(1.1);
+            color:white;
+            cursor:pointer;
+        }
+        #display{
+            width:500vw;
+            height:75vw;
+            grid-column:span 4;
+            font-size:40vw;
+            border-color:lightgray;
+            text-align:right;
+        }
+        body{
+        font-family: Arial, sans-serif;
+        background-color:white;
+        text-align:center;
+        margin-top:75vw;
+        background-color:lightgray;
+        border:10vw;
+        border-color:darkgray;        }
+.calculator{
+    display: grid;
+    grid-template-columns: repeat(4, 80vw);
+    grid-template-rows: repeat(6,80vw);
+    grid-gap: 10vw;
+    justify-content: center;
+    padding: 20px;
+    background: lightgray;
+    border-radius: 10px;
+    margin:0 auto;
+}
+.clear{
+grid-column:span 4;
+}
+  </style>
+  </head>
+  <body>
+      <h1>calculator 3.0</h1>
+      <input id="display" type="text">
+    <div class="calculator">
+    <button class="symbols">√</button>
+    <button class="symbols">**</button>
+    <button class="symbols">%</button>
+    <button class="backspace">⌫</button>
+    <button class="number">7</button>
+    <button class="number">8</button>
+    <button class="number">9</button>
+    <button class="symbols">/</button>
+    <button class="number">4</button>
+    <button class="number">5</button>
+    <button class="number">6</button>
+    <button class="symbols">*</button>
+    <button class="number">1</button>
+    <button class="number">2</button>
+    <button class="number">3</button>
+    <button class="symbols">-</button>
+    <button class="number">0</button>
+    <button class="symbols">.</button>
+    <button class="equals">=</button>
+    <button class="symbols">+</button>
+    <button class="clear">C</button>
+    </div>
+    <script>
+         const display = document.getElementById("display");
+        document.querySelectorAll(".number").forEach(button => {
+            button.addEventListener("click", () => {
+            display.value += button.textContent;
+    });
+});
+        document.querySelectorAll(".symbols").forEach(button =>{
+           button.addEventListener("click",() => {
+                if (button.textContent === "√") {
+            display.value += "√(";
+                }
+           else{
+               display.value += button.textContent;
+           }
+        });
+        });
+        
+        document.querySelector(".equals").addEventListener("click", () => {
+   let expression = display.value;
+    expression = expression.replace(/√(\d+(\.\d+)?)/g, "Math.sqrt($1)");
+    try{
+display.value = eval(expression);
+    }
+    catch{
+        display.value = "error";
+    }
+});
+
+    document.querySelector(".clear").addEventListener("click", () => {
+    display.value = "";
+    });
+document.querySelector(".backspace").addEventListener("click", () =>{
+    display.value = display.value.slice(0, -1);
+});
+document.addEventListener("keydown", (e) => {
+   const allowed = "012345+-*/.%"; 
+   if(allowed.includes(e.key));
+   if(e.key === "Enter")document.querySelector(".equals").click();
+   if(e.key === "Backspace")document.querySelector(".backspace").click();
+    if(e.key === "Escape")document.querySelector(".clear").click();
+});
+    </script>
+</body>
+</html>
