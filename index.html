@@ -1,63 +1,53 @@
 <html>
 <head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: lightgray;
-      text-align: center;
-      margin: 0;
-      padding: 2vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      margin-bottom: 2vh;
-    }
-
-    #display {
-      width: min(350px, 90vw);
-      height: min(80px, 15vw);
-      font-size: min(30px, 6vw);
-      text-align: right;
-      margin-bottom: 2vh;
-      padding: 0 1vw;
-      border-radius: 5px;
-      border: 1px solid lightgray;
-    }
-
-    .calculator {
-      display: grid;
-      grid-template-columns: repeat(4, min(80px, 20vw));
-      grid-template-rows: repeat(6, min(80px, 20vw));
-      gap: min(10px, 2vw);
-      background: lightgray;
-      padding: min(10px, 2vw);
-      border-radius: 10px;
-      justify-content: center;
-    }
-
-    button {
-      background-color: gray;
-      border-radius: min(15px, 2vw);
-      font-size: min(20px, 4vw);
-      color: black;
-      text-align: center;
-      cursor: pointer;
-      border: none;
-      transition: 0.2s;
-    }
-
-    button:hover {
-      background-color: black;
-      color: white;
-      transform: scale(1.1);
-    }
-
-    .clear {
-      grid-column: span 4;
-    }
+   <style>
+   button{
+        background-color:gray;
+        border-radius:13.125px;
+        color:black;
+        font-size:17.5px;
+        text-align:center;
+        padding:25px 25px;
+        margin-bottom:7.5px;
+        font-family: Arial, sans-serif;
+        line-height:1;
+        }
+        button:hover{
+            background-color:black;
+            transform: scale(1.1);
+            color:white;
+            cursor:pointer;
+        }
+        #display{
+            width:437.5px;
+            height:65.625px;
+            grid-column:span 4;
+            font-size:35px;
+            border-color:lightgray;
+            text-align:right;
+        }
+        body{
+        font-family: Arial, sans-serif;
+        background-color:white;
+        text-align:center;
+        margin-top:65.625px;
+        background-color:lightgray;
+        border:10px;
+        border-color:darkgray;        }
+.calculator{
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(6,70px);
+    grid-gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    background: lightgray;
+    border-radius: 10px;
+    margin:0 auto;
+}
+.clear{
+grid-column:span 4;
+}
   </style>
   </head>
   <body>
