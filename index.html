@@ -120,7 +120,9 @@ document.querySelector(".backspace").addEventListener("click", () =>{
 });
 document.addEventListener("keydown", (e) => {
    const allowed = "012345+-*/.%"; 
-   if(allowed.includes(e.key));
+   if(allowed.includes(e.key)){
+display.value += e.key;
+   }
    if(e.key === "Enter")document.querySelector(".equals").click();
    if(e.key === "Backspace")document.querySelector(".backspace").click();
     if(e.key === "Escape")document.querySelector(".clear").click();
