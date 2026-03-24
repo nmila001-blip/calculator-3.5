@@ -3,7 +3,7 @@
    <style>
    button{
         background-color:gray;
-        border-radius:13.125px;
+        border-radius:15px;
         color:black;
         font-size:17.5px;
         text-align:center;
@@ -19,10 +19,10 @@
             cursor:pointer;
         }
         #display{
-            width:437.5px;
-            height:65.625px;
+            width:500px;
+            height: 80px;
             grid-column:span 4;
-            font-size:35px;
+            font-size:40px;
             border-color:lightgray;
             text-align:right;
         }
@@ -30,15 +30,15 @@
         font-family: Arial, sans-serif;
         background-color:white;
         text-align:center;
-        margin-top:65.625px;
+        margin-top:70px;
         background-color:lightgray;
         border:10px;
         border-color:darkgray;        }
 .calculator{
     display: grid;
-    grid-template-columns: repeat(4, 70px);
-    grid-template-rows: repeat(6,70px);
-    grid-gap: 10px;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(6,700px);
+    grid-gap: 30px;
     justify-content: center;
     padding: 20px;
     background: lightgray;
@@ -86,7 +86,7 @@ grid-column:span 4;
         document.querySelectorAll(".symbols").forEach(button =>{
            button.addEventListener("click",() => {
                 if (button.textContent === "√") {
-            display.value += "√(";
+            display.value += "√";
                 }
            else{
                display.value += button.textContent;
